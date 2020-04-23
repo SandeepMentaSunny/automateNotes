@@ -1,0 +1,17 @@
+<header>
+    <div class="brand">
+        <a href="javascript:;">NotesApp</a>
+    </div>
+    <div class="search-wrapper">
+        <div class="search-field">
+            <i class="material-icons">search</i>
+            <input type="text" placeholder="Search for Notes..." class="form-control" [(ngModel)]="searchInput"
+                (keyup)="getSearchFilter()">
+            <button class="remove-btn" *ngIf="removeButton" (click)="removeSearchValue()"><i
+                    class="material-icons">close</i></button>
+        </div>
+        <div class="add-btn-wrapper">
+            <button class="add-btn" type="button"><i class="material-icons">add</i> Add Notes</button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,78 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: dodgerblue;
+}
+.brand{
+    display: flex;
+}
+.brand a{ 
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    position: relative;
+}
+.brand a::after{
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  top: 26px;
+}
+.brand a:hover::after{
+    width: 100%; 
+    left: 0;
+}
+.search-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 32%;
+}
+.search-wrapper .search-field i{
+    position: absolute;
+    top: 17px;
+    color: #fff;
+    font-size: 1rem;
+}
+.search-wrapper input{
+    border: 0;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 2px solid #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.search-wrapper input::placeholder{
+    color: #fff;
+}
+.search-wrapper .remove-btn{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    display: inline;
+    position: absolute;
+    top: 0px;
+    right: 31px;
+}
+.add-btn{
+    border: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+}

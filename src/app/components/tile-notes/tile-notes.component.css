@@ -1,0 +1,168 @@
+.tile-notes-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    margin: 30px 15px;
+    font-family: 'Reenie Beanie', cursive;
+}
+.notes{
+    margin: 0 auto;
+    color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width: 90%;
+  padding:1em;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  cursor: pointer;
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+.notes:nth-child(even){
+    -o-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+  }
+.notes:nth-child(3n){
+    -o-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+  }
+.notes:nth-child(5n){
+    -o-transform:rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+  }
+.notes:hover, .notes:focus{
+    -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    position:relative;
+    z-index:5;
+  }
+  .notes:nth-child(even) {
+    -o-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+  }
+  .notes:nth-child(3n){
+    -o-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:#ccf;
+  }
+  .small-notes{
+    grid-template-columns: 1fr;
+    width: 30%;
+    float: left;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    grid-row-gap: 1rem;
+    margin: 30px 0 30px 15px;
+  }
+  .small-notes .notes{
+    margin: 0 auto;
+    color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width: 80%;
+  padding:1em;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  cursor: pointer;
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+  border-radius: 10px;
+}
+.small-notes .notes:nth-child(even) {
+  -o-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  -moz-transform:rotate(0deg);
+  top: 0;
+}
+.small-notes .notes:nth-child(3n){
+  -o-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  -moz-transform:rotate(0deg);
+  top: 0;
+}
+.small-notes .notes:hover, .notes:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+}
+.small-notes::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.small-notes::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+ 
+.small-notes::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+.small-notes .notes:nth-child(5n){
+  -o-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  -moz-transform:rotate(0deg);
+}
+.active{
+  border: 2px solid yellow;
+}
+.notes h3{
+  font-size: 40px;
+  margin: 0;
+  display: inline-block;
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.notes p{
+  font-size: 24px;
+  margin: 0;
+  display: inline-block;
+  width: 280px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.small-notes .notes h3{
+  width: 230px;
+}
+.small-notes .notes p{
+  width: 230px;
+}

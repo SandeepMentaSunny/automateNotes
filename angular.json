@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "automateNotes"
+    }
+  },
+  "defaultProject": "automateNotes",
+  "cli": {
+    "analytics": "d8cafbdd-ddd0-48e9-835b-87d0bd99ffda"
+  }
 }

@@ -1,0 +1,17 @@
+<div class="tile-notes-wrapper" *ngIf="notes.length > 0"  [ngClass]="{'small-notes': sideNotes}">
+    <ng-container *ngFor="let note of notes">
+        <div class="notes" (click)="editNotes(note)" [ngClass]="{'active': note?.selected}">
+            <h3>{{note?.title}}</h3>
+            <p>{{note?.description}}</p>
+            <time>{{note?.timestamp | date: 'medium'}}</time>
+        </div>
+    </ng-container>
+</div>
+<ng-container *ngIf="editNotesData">
+    <app-main-notes [selectedNoteData]="editNotesData" (updateNoteEmitter)="getUpdatedData($event)"></app-main-notes>
+</ng-container>
+<div class="empty-notes" *ngIf="notes.length === 0">
+    <div class="alert">
+        <p>Please add notes</p>
+    </div>
+</div>

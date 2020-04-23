@@ -1,0 +1,54 @@
+.edit-notes-wrapper{
+    background-color: #ffc;
+    padding: 10px;
+    width: 65%;
+    float: right;
+    margin: 2.4% 1% 0;
+    height: 600px;
+    border-radius: 10px;
+    font-family: 'Reenie Beanie', cursive;
+}
+.edit-notes .edit-title{
+    font-size: 40px;
+    width: 90%;
+    margin: 10px auto;
+    display: table;
+    font-size: 39px;
+    border: 0;
+    background: #ffc;
+    border-bottom: 2px solid lightgray;
+    font-family: 'Reenie Beanie', cursive;
+}
+.edit-notes .edit-title:focus{
+    outline: none;
+}
+  @media screen and (max-width: 1380px) {
+    .edit-notes-wrapper{
+        width: 63%;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .edit-notes-wrapper{
+        width: 61%;
+    }
+  }
+  .date{
+    font-size: 30px;
+    margin: 0 auto;
+    display: table;    
+  }
+  .edit-description{
+    width: 90%;
+    margin: 0 auto;
+    display: table;
+    background: #ffc;
+    border: 0;
+    resize: none;
+    border-bottom: 3px solid #000;
+    font-size: 24px;
+    font-family: 'Reenie Beanie', cursive;
+    max-height: 100%;
+  }
+  .edit-description:focus{
+    outline: none;
+  }
