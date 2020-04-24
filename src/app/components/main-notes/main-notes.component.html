@@ -1,7 +1,7 @@
 <div class="edit-notes-wrapper">
     <div class="edit-notes">
         <time class="date">{{selectedNoteData.timestamp | date: 'medium'}}</time>
-        <input type="text" class="edit-title" (keyup)="updateNoteData($event)" value="{{selectedNoteData?.title}}" placeholder="Enter your Notes Title..."/>
-        <textarea class="edit-description" (keyup)="updateNoteData($event)">{{selectedNoteData?.description}}</textarea>
+        <input type="text" class="edit-title" (keyup)="updateNoteData($event)" value="{{selectedNoteData?.title}}" (blur)="submitFormData()" placeholder="Enter your Notes Title..."/>
+        <textarea class="edit-description" (keyup)="updateNoteData($event)" (blur)="submitFormData()">{{selectedNoteData?.description}}</textarea>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class ApiService{
     public toggleMenuSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     public selectedInput: Subject<object> = new Subject<object>();
+    public notesEvent: Subject<string> = new Subject<string>();
 
     constructor(public http: HttpClient) { }
 

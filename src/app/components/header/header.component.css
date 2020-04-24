@@ -34,8 +34,6 @@ header{
 .search-wrapper{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 32%;
 }
 .search-wrapper .search-field i{
     position: absolute;

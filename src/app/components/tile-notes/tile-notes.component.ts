@@ -12,23 +12,33 @@ export class TileNotesComponent implements OnInit {
   public notes: object[] = [];
   public editNotesData: object;
   public sideNotes: boolean = false;
+  public eventType: string = '';
 
   constructor(public apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getNotes().subscribe((data: object[]) => {
-      this.notes = data.map(obj => {
-        if(obj){
-          obj[`selected`] = false;
-        }
-        return obj;
-      });
-    });
+    // this.apiService.getNotes().subscribe((data: object[]) => {
+    //   this.notes = data.map(obj => {
+    //     if(obj){
+    //       obj[`selected`] = false;
+    //     }
+    //     return obj;
+    //   });
+    // });
     this.apiService.selectedInput.subscribe((data: InputInterface) => {
-      const { type, value, id } = data;
-      const updatedIndex: number = this.notes.findIndex((note: NoteInterface) => note.id === id);
-      if(updatedIndex > -1){
-        this.notes[updatedIndex][type] = value;
+        const { type, value, id } = data;
+        const updatedIndex: number = this.notes.findIndex((note: NoteInterface) => note.id === id);
+        if (updatedIndex > -1) {
+          this.notes[updatedIndex][type] = value;
+        }else{
+          const note = {type: value};
+          this.notes.push(note);
+        }
+    });
+    this.apiService.notesEvent.subscribe((data) => {
+      if(data === 'create'){
+        this.eventType = data;
+        this.editNotesData = {title: '', description: ''};
       }
     });
   }
@@ -46,9 +56,10 @@ export class TileNotesComponent implements OnInit {
         return note;
       });
     }
+    this.apiService.notesEvent.next('update');
   }
 
-  getUpdatedData(data: object){
+  deleteNotes(data){
     console.log(data);
   }
 }

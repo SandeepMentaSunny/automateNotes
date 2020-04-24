@@ -1,14 +1,20 @@
 <div class="tile-notes-wrapper" *ngIf="notes.length > 0"  [ngClass]="{'small-notes': sideNotes}">
     <ng-container *ngFor="let note of notes">
-        <div class="notes" (click)="editNotes(note)" [ngClass]="{'active': note?.selected}">
-            <h3>{{note?.title}}</h3>
+        <div class="notes" [ngClass]="{'active': note?.selected}">
+            <div class="title-wrapper">
+                <h3>{{note?.title}}</h3>
+                <ul class="icons">
+                    <li><button class="hover-btn" (click)="editNotes(note)"><i class="material-icons">edit</i></button></li>
+                    <li><button class="hover-btn" (click)="deleteNotes(note)"><i class="material-icons">delete</i></button></li>
+                </ul>
+            </div>
             <p>{{note?.description}}</p>
             <time>{{note?.timestamp | date: 'medium'}}</time>
         </div>
     </ng-container>
 </div>
 <ng-container *ngIf="editNotesData">
-    <app-main-notes [selectedNoteData]="editNotesData" (updateNoteEmitter)="getUpdatedData($event)"></app-main-notes>
+    <app-main-notes [selectedNoteData]="editNotesData"></app-main-notes>
 </ng-container>
 <div class="empty-notes" *ngIf="notes.length === 0">
     <div class="alert">

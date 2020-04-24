@@ -10,20 +10,23 @@ export class HeaderComponent implements OnInit {
   public searchInput: string;
   public removeButton: boolean = false;
 
-  constructor(public apiService: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
   }
-  getSearchFilter(){
-    if(this.searchInput.length > 0){
+  getSearchFilter() {
+    if (this.searchInput.length > 0) {
       this.removeButton = true;
-    }else{
+    } else {
       this.removeButton = false;
     }
   }
-  removeSearchValue(){
+  removeSearchValue() {
     this.removeButton = false;
     this.searchInput = '';
   }
 
+  addNotes(){
+    this.apiService.notesEvent.next('create');
+  }
 }
